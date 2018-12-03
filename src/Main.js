@@ -75,7 +75,7 @@ class Main extends Component {
 					    {users.map((x, index) => {
 					      return (<tr key={index}>
 					      <td>{x.id}</td>
-					      <td>{x.url}</td>
+					      <td><a href={x.url}>link</a></td>
 					      <td>{x.context}</td>
 					    </tr>)
 					    })}
