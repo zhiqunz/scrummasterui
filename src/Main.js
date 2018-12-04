@@ -63,7 +63,7 @@ class Main extends Component {
                 <div className="row">
                 
                 
-	                <Table striped bordered hover>
+	                <Table striped bordered hover style={{wordBreak:'keep-all'}}>
 					  <thead>
 					    <tr>
 					      <th>id</th>
@@ -73,11 +73,21 @@ class Main extends Component {
 					  </thead>
 					  <tbody>
 					    {users.map((x, index) => {
-					      return (<tr key={index}>
-					      <td>{x.id}</td>
-					      <td><a href={x.url}>link</a></td>
-					      <td>{x.context}</td>
-					    </tr>)
+					      return (
+                            <tr key={index}>
+					          <td>{x.id}</td>
+					          <td>
+                                 <a href={x.url} target="_blank">link</a>
+                              </td>
+					          <td>
+                                <div dangerouslySetInnerHTML={{__html: 
+                                    x.context.replace(/\n+ +\n+ *\n*/g, "<br />")
+                                             .replace(/\n\n/g, "<br />")
+                                             .replace(/\n/g, "<br />")
+                                             .replace(eval('/'+ searchName +'/gi'), "<a><strong>"+searchName+" </strong></a>")}} /> 
+                              </td>
+					        </tr>
+                          )
 					    })}
 					    
 					  </tbody>

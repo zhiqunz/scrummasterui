@@ -22,6 +22,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro"></p>
+        
         <div className="container">
           <Search setSearchName={this.setSearchName}/>
           <Main searchName={this.state.searchName}/>
