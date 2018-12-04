@@ -84,7 +84,9 @@ class Main extends Component {
                                     x.context.replace(/\n+ +\n+ *\n*/g, "<br />")
                                              .replace(/\n\n/g, "<br />")
                                              .replace(/\n/g, "<br />")
-                                             .replace(eval('/'+ searchName +'/gi'), "<a><strong>"+searchName+" </strong></a>")}} /> 
+                                             .replace(eval('/'+ searchName +'/gi'), "<a><strong>"+searchName+" </strong></a>")
+                                    }} 
+                                /> 
                               </td>
 					        </tr>
                           )
